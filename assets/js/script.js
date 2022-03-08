@@ -171,6 +171,7 @@ document.addEventListener("DOMContentLoaded", function(){
         //Возможность указать оценку
         function setRating(rating) {
             const ratingItems = rating.querySelectorAll('.rating__item');
+            const ratingNames = rating.querySelectorAll('.characterName');
 
             for (let index = 0; index < ratingItems.length; index++){
 
@@ -192,6 +193,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     //Обновление переменных
                     initRatingVars(rating);
 
+                    //РАБОТА С ЛОКАЛЬНЫМ ХРАНИЛИЩЕМ
 
                 });
             };
@@ -199,6 +201,8 @@ document.addEventListener("DOMContentLoaded", function(){
     };
 
 });
+
+
 
 
 
