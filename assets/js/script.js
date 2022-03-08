@@ -192,119 +192,15 @@ document.addEventListener("DOMContentLoaded", function(){
                     //Обновление переменных
                     initRatingVars(rating);
 
-                    //ЗДЕСЬ НАДО ОТПРАВИТЬ ДАННЫЕ
-                    let localRaiting = [];
-                    console.log(localRaiting);
-                    let author = document.querySelector('.characterName').innerHTML;
-                    console.log(author);
-
-                    localRaiting.push(author);
-                    //localStorage.setItem(document.querySelector('#Batman').innerHTML, ratingItem.value);
-
-
-
-/*
-                    if(rating.dataset.ajax) {
-                        //Отправить на сервер
-                        setRatingValue(ratingItem.value, rating);
-                    } else {
-                        //Отобразить указанную оценку
-                        ratingValue.innerHTML = index + 1;
-                        setRatingActiveWidth();
-                    }*/
 
                 });
-            }
-    }
-
-    /*
-    async function setRatingValue(value, rating) {
-        if(!rating.classList.contains('rating_sending')){
-            rating.classList.add('rating_sending');
-
-            //Отправка данных (value) на сервер
-            let response = await fetch('rating.json', {
-                method: 'GET',
-
-                //body: JSON.stringify({
-                // userRating: value
-                //}),
-                //headers: {
-                // 'content-type': 'application/json'
-                //}
-            });
-
-            if(response.ok){
-                const result = await response.json();
-
-                //Получаем новый рейтинг
-                const newRating = result.newRating;
-
-                //Вывод нового среднего результата
-                ratingValue.innerHTML = newRating;
-
-                //Обновление активных звезд
-                setRatingActiveWidth();
-
-                rating.classList.remove('rating_sending');
-
-            } else {
-
-                alert("Ошибка");
-
-                rating.classList.remove('rating_sending');
-            }
-        }
-    }*/
-}
+            };
+        };
+    };
 
 });
 
 
-
-
-
-
-
-
-
-
-
-/*
-document.addEventListener("DOMContentLoaded", function(event) {
-    fetch("https://www.balldontlie.io/api/v1/teams/14")
-    .then(response => response.json())
-    .then(team => {
-        document.getElementById("name")
-        .innerHTML = team.name;
-        document.getElementById("full_name")
-        .innerHTML = team.full_name;
-        document.getElementById("abbreviation")
-        .innerHTML = team.abbreviation;
-        document.getElementById("city")
-        .innerHTML = team.city;
-        document.getElementById("conference")
-        .innerHTML = team.conference;
-        document.getElementById("division")
-        .innerHTML = team.division;
-        console.log(team)
-    })
-    .catch(error => console.log(error));
-})
-
-
-/*Тестила
-document.addEventListener("DOMContentLoaded", function(event) {
-    fetch("https://excuser.herokuapp.com/v1/excuse")
-    .then(response => response.json())
-    .then(random => {
-        document.getElementById("excuse")
-        .innerHTML = random[0].excuse;
-
-        console.log(random)
-    })
-    .catch(error => console.log(error));
-})*/
 
 
 
