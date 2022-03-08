@@ -100,6 +100,19 @@ document.addEventListener("DOMContentLoaded", function(){
         charactersContent +=
             `<h2 class="characterName">${character.name}</h2>
             <img class="characterImage" id="characterImage" src="${character.image}" alt="${character.name}"></img>
+            <div data-ajax="true" class="rating rating_set">
+                <div class="rating__body">
+                    <div class="rating__active"></div>
+                    <div class="rating__items">
+                        <input type ="radio" class="rating__item" value="1" name="rating"></input>
+                        <input type ="radio" class="rating__item" value="2" name="rating"></input>
+                        <input type ="radio" class="rating__item" value="3" name="rating"></input>
+                        <input type ="radio" class="rating__item" value="4" name="rating"></input>
+                        <input type ="radio" class="rating__item" value="5" name="rating"></input>
+                    </div>
+                </div>
+                <div class="rating__value">1</div>
+            </div>
             <div class="characterInfo">
                 <div class="characterUniverse">Вселенная: ${character.universe}</div>
                 <div class="characterAlterEgo">Альтер эго: ${character.alterego}</div>
@@ -112,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     document.getElementById("charactersContainer").innerHTML = charactersContent;
 });
+
 
 //РАБОТА С РЕЙТИНГОМ
 const ratings = document.querySelectorAll('.rating');
@@ -169,10 +183,10 @@ function initRatings (){
                 //Обновение активных звезд
                 setRatingActiveWidth();
             });
+
             ratingItem.addEventListener('click', function(e){
                 //Обновление переменных
                 initRatingVars(rating);
-
 
                 if(rating.dataset.ajax) {
                     //Отправить на сервер
@@ -221,7 +235,9 @@ function initRatings (){
                 setRatingActiveWidth();
 
                 rating.classList.remove('rating_sending');
+
             } else {
+
                 alert("Ошибка");
 
                 rating.classList.remove('rating_sending');
