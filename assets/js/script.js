@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function(){
                         <input type ="radio" class="rating__item" value="5" name="rating_${character.code}"></input>
                     </div>
                 </div>
-                <div class="rating__value" id="${character.code}_value">1.5</div>
+                <div class="rating__value" id="${character.code}_value">2.5</div>
             </div>
             <div class="characterInfo">
                 <div class="characterUniverse">Вселенная: ${character.universe}</div>
