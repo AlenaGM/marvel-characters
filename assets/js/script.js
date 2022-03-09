@@ -110,37 +110,39 @@ document.addEventListener("DOMContentLoaded", function(){
 
     for (let character of characters) {
         charactersContent +=
-            `<h2 class="characterName" id="${character.code}">${character.name}</h2>
-            <img class="characterImage" src="${character.image}" alt="${character.code}"></img>
-            <div class="rating rating_set">
-                <div class="rating__body">
-                    <div class="rating__active"></div>
-                    <div class="rating__items">
-                        <input type ="radio" class="rating__item" value="1" name="rating_${character.code}"></input>
-                        <input type ="radio" class="rating__item" value="2" name="rating_${character.code}"></input>
-                        <input type ="radio" class="rating__item" value="3" name="rating_${character.code}"></input>
-                        <input type ="radio" class="rating__item" value="4" name="rating_${character.code}"></input>
-                        <input type ="radio" class="rating__item" value="5" name="rating_${character.code}"></input>
-                        <input type ="radio" class="rating__item" value="6" name="rating_${character.code}"></input>
-                        <input type ="radio" class="rating__item" value="7" name="rating_${character.code}"></input>
-                        <input type ="radio" class="rating__item" value="8" name="rating_${character.code}"></input>
-                        <input type ="radio" class="rating__item" value="9" name="rating_${character.code}"></input>
-                        <input type ="radio" class="rating__item" value="10" name="rating_${character.code}"></input>
+            `<div class="character_item"
+                <h2 class="characterName" id="${character.code}">${character.name}</h2>
+                <img class="characterImage" src="${character.image}" alt="${character.code}"></img>
+                <div class="rating rating_set">
+                    <div class="rating__body">
+                        <div class="rating__active"></div>
+                        <div class="rating__items">
+                            <input type ="radio" class="rating__item" value="1" name="rating_${character.code}"></input>
+                            <input type ="radio" class="rating__item" value="2" name="rating_${character.code}"></input>
+                            <input type ="radio" class="rating__item" value="3" name="rating_${character.code}"></input>
+                            <input type ="radio" class="rating__item" value="4" name="rating_${character.code}"></input>
+                            <input type ="radio" class="rating__item" value="5" name="rating_${character.code}"></input>
+                            <input type ="radio" class="rating__item" value="6" name="rating_${character.code}"></input>
+                            <input type ="radio" class="rating__item" value="7" name="rating_${character.code}"></input>
+                            <input type ="radio" class="rating__item" value="8" name="rating_${character.code}"></input>
+                            <input type ="radio" class="rating__item" value="9" name="rating_${character.code}"></input>
+                            <input type ="radio" class="rating__item" value="10" name="rating_${character.code}"></input>
+                        </div>
                     </div>
+                    <div class="rating__value" id="value_${character.code}"></div>
                 </div>
-                <div class="rating__value" id="value_${character.code}"></div>
-            </div>
-            <div class="characterInfo">
-                <div>Вселенная: ${character.universe}</div>
-                <div>Альтер эго: ${character.alterego}</div>
-                <div>Род деятельности:  ${character.activity}</div>
-                <div>Друзья: ${character.firends}</div>
-                <div>Суперсилы: ${character.superpowers}</div>
-                <div>Подробнее: ${character.moreinfo}</div>
+                <div class="characterInfo">
+                    <div>Вселенная: ${character.universe}</div>
+                    <div>Альтер эго: ${character.alterego}</div>
+                    <div>Род деятельности:  ${character.activity}</div>
+                    <div>Друзья: ${character.firends}</div>
+                    <div>Суперсилы: ${character.superpowers}</div>
+                    <div>Подробнее: ${character.moreinfo}</div>
+                </div>
             </div>`
         }
 
-    document.getElementById("charactersContainer").innerHTML = charactersContent; //Выводи карточки на экран
+    document.getElementById("characters_container").innerHTML = charactersContent; //Выводи карточки на экран
     renewRatings ();//Достаем значения рейтинга из local storage и выводим в карточку на экран
 
     //РАБОТА С РЕЙТИНГОМ

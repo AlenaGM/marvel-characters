@@ -1,3 +1,35 @@
+html,
+body {
+    height: 100%;
+}
+
+.wrapper {
+    display: grid;
+    min-height: 100%;
+    grid-template-columns: minmax(24px, 1fr) minmax(auto, 1200px) minmax(24px, 1fr);
+    grid-template-rows: minmax(80px, auto) 1fr minmax(60px, auto);
+    grid-template-areas:
+        ". header ."
+        ". main ."
+        ". footer .";
+}
+
+.characters_container {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 26px;
+    row-gap: 50px;
+    margin-top: 72px;
+}
+
+.character_item {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
 .characterImage {
     width: 300px;
 }
