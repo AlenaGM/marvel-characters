@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
 
     document.getElementById("charactersContainer").innerHTML = charactersContent; //Выводи карточки на экран
-    renewRatings ();//Достаем значения рейтинга из local storage и выводим на экран
+    renewRatings ();//Достаем значения рейтинга из local storage и выводим в карточку на экран
 
     //РАБОТА С РЕЙТИНГОМ
     const ratings = document.querySelectorAll('.rating');
