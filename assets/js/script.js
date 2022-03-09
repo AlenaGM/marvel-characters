@@ -1,5 +1,6 @@
 "use strict"
 
+//СОЗДАЕМ JSON С ИНФОРМАЦИЕЙ О ГЕРОЯХ
 let json = `[{
         "name": "Бэтмен",
         "code": "batman",
@@ -52,7 +53,7 @@ let json = `[{
         "moreinfo": "Капитан Америка — персонаж, целеноправленно созданный, чтобы воплощать идеалы патриотизма. Потому он был особенно популярный во время Второй мировой войны. В комиксах обращение «Капитан Америка» применяется к любому, кто выбран правительством США. Больше всего оно закрепилось именно за Стивом Роджерсом. <br><br>Стив родился в 1917 году в семье ирландских эмигрантов Сары и Джозефа Роджерсов. В детстве он был очень слабым юношей и постоянно подвергался насмешкам со стороны других ребят. Ирландские корни давали о себе знать, потому парень от драки не лез. В начале Второй мировой войны Стивен стремился попасть на фронт. Естественно, из-за здоровья ему отказывали. <br><br>По воле судьбы ему предложили принять участие в секретном оборонном проекте, целью которого было создание суперсолдат. Несмотря на сложности во время эксперимента, результат был успешным. Роджерс превратился из хилого юноши в настоящего Аполлона. Актер Крис Эванс с этой ролью вполне справился:)"
     },{
         "name": "Тор",
-        "name": "thor",
+        "code": "thor",
         "image": "assets/img/thor.jpg",
         "universe": "Marvel Comics",
         "alterego": "нет; полное имя — Тор Одинсон",
@@ -72,7 +73,7 @@ let json = `[{
         "moreinfo": "идею создания Халка как персонажа можно отнести к фантастической новелле «Странная история доктора Джекила и мистера Хайда», в которой ученый не может примириться со своим демоническим альтер эго. Прошлое у Халка — хуже некуда: отец Брюса страдал от алкоголизма и приступов ярости, а мать пыталась всеми силами уберечь сына от гнева своего мужа. Она погибла, защищая своего единственного ребенка от его побоев. <br><br>Пронеся через все детство тяжелый психологический груз, Брюс вырос в чрезвычайно одаренного, но замкнутого юношу. Хотя Брюс не мог уважать отца, но пошел в науке по его стопам и выбрал ядерную физику. Во время эксперимента он ввел себе пробную сыворотку и подверг себя воздействию большого количества гамма-радиации. Беннер превратился в мускулистого неуправляемого гиганта, который крушил все вокруг и не понимал, что происходит. Так имя Халка стало нарицательным для людей, который не могут держать себя в руках."
     },{
         "name": "Чудо-женщина",
-        "code": "wonderWoman",
+        "code": "wonderwoman",
         "image": "assets/img/wonderwoman.jpg",
         "universe": "DC Comics",
         "alterego": "Диана Принс",
@@ -82,7 +83,7 @@ let json = `[{
         "moreinfo": "пора бы разбавить эту мужскую вечеринку по-настоящему крутой девчонкой :) Принцесса-амозонка родилась на мистическом острове Темескира, расположенном в центре Бермудского треугольника, где пропадают самолеты. Свое настоящее имя — Диана — она получила в честь древнегреческой богини охоты, а суперспособности — от богини любви Афродиты. Растили героиню в исключительно женском обществе, поэтому Чудо-женщина часто появляется в культуре как символ феминизма. <br><br>У Дианы есть супер-снаряжение: лассо истины и тиара. Первое было сковано богом огня Гефестом, и оно никогда не промахивается. Человек, попавший в его петлю, неизбежно расскажет свои секреты, вспомнит забытое и даже подчинится приказам. Тиара же работает как метательное оружие, способное рассечь что угодно. Корона со звездой в центре символизирует патриотизм американской героини и служит стильным аксессуаром :)"
     },{
         "name": "Черная вдова",
-        "code": "blackWidow",
+        "code": "blackwidow",
         "image": "assets/img/blackwidow.jpg",
         "universe": "Marvel Comics",
         "alterego": "Наташа Романофф",
@@ -102,15 +103,15 @@ let json = `[{
         "moreinfo": "как и Росомаха из Людей Икс, Дэдпул был подвергнут опытам по программе «Оружие Икс». Ученые попытались исцелить его рак, привив его клеткам способность к регенерации. Как и всегда в комиксах, что-то пошло не так, и Дэдпул остался изуродованным и психически нестабильным. <br><br>Это единственный супергерой из списка, который однозначно не на стороне добра. Дэдпул наслаждается насилием. Первоначально появившись в основной Вселенной Marvel, он получил альтернативные варианты в других реальностях Мультивселенной. Что оставалось неизменным — его циничное, черное чувство юмора: за него Дэдпула прозвали «Болтливым наемником»."
     }]`
 
-//СОЗДАЕМ КАРТОЧКУ ГЕРОЯ
+//СОЗДАЕМ КАРТОЧКУ ГЕРОЯ (при загрузке страницы)
 document.addEventListener("DOMContentLoaded", function(){
     let characters = JSON.parse(json);
     let charactersContent = "";
 
     for (let character of characters) {
         charactersContent +=
-            `<h2 class="characterName" id="${character.name}">${character.name}</h2>
-            <img class="characterImage" src="${character.image}" alt="${character.name}"></img>
+            `<h2 class="characterName" id="${character.code}">${character.name}</h2>
+            <img class="characterImage" src="${character.image}" alt="${character.code}"></img>
             <div class="rating rating_set">
                 <div class="rating__body">
                     <div class="rating__active"></div>
@@ -120,22 +121,27 @@ document.addEventListener("DOMContentLoaded", function(){
                         <input type ="radio" class="rating__item" value="3" name="rating_${character.code}"></input>
                         <input type ="radio" class="rating__item" value="4" name="rating_${character.code}"></input>
                         <input type ="radio" class="rating__item" value="5" name="rating_${character.code}"></input>
+                        <input type ="radio" class="rating__item" value="6" name="rating_${character.code}"></input>
+                        <input type ="radio" class="rating__item" value="7" name="rating_${character.code}"></input>
+                        <input type ="radio" class="rating__item" value="8" name="rating_${character.code}"></input>
+                        <input type ="radio" class="rating__item" value="9" name="rating_${character.code}"></input>
+                        <input type ="radio" class="rating__item" value="10" name="rating_${character.code}"></input>
                     </div>
                 </div>
-                <div class="rating__value" id="${character.code}_value">2.5</div>
+                <div class="rating__value" id="value_${character.code}"></div>
             </div>
             <div class="characterInfo">
-                <div class="characterUniverse">Вселенная: ${character.universe}</div>
-                <div class="characterAlterEgo">Альтер эго: ${character.alterego}</div>
-                <div class="characterActivity">Род деятельности:  ${character.activity}</div>
-                <div class="characterFriends">Друзья: ${character.firends}</div>
-                <div class="characterSuperPowers">Суперсилы: ${character.superpowers}</div>
-                <div class="characterMoreInfo">Подробнее: ${character.moreinfo}</div>
+                <div>Вселенная: ${character.universe}</div>
+                <div>Альтер эго: ${character.alterego}</div>
+                <div>Род деятельности:  ${character.activity}</div>
+                <div>Друзья: ${character.firends}</div>
+                <div>Суперсилы: ${character.superpowers}</div>
+                <div>Подробнее: ${character.moreinfo}</div>
             </div>`
         }
 
-    document.getElementById("charactersContainer").innerHTML = charactersContent;
-
+    document.getElementById("charactersContainer").innerHTML = charactersContent; //Выводи карточки на экран
+    renewRatings ();//Достаем значения рейтинга из local storage и выводим на экран
 
     //РАБОТА С РЕЙТИНГОМ
     const ratings = document.querySelectorAll('.rating');
@@ -166,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         }
 
-        //Инициализация переменных
+        //Инициализируем переменные
         function initRatingVars(rating) {
             ratingActive = rating.querySelector('.rating__active');
             ratingValue = rating.querySelector('.rating__value');
@@ -174,11 +180,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
         //Изменяем ширину активных звезд
         function setRatingActiveWidth(index = ratingValue.innerHTML) {
-            const ratingActiveWidth = index/ 0.05;
+            const ratingActiveWidth = index/ 0.1;
             ratingActive.style.width = `${ratingActiveWidth}%`;
         }
 
-        //Возможность указать оценку
+        //Даем возможность выставить оценку
         function setRating(rating) {
             const ratingItems = rating.querySelectorAll('.rating__item');
 
@@ -202,18 +208,28 @@ document.addEventListener("DOMContentLoaded", function(){
                     //Обновление переменных
                     initRatingVars(rating);
 
-                    //РАБОТА С ЛОКАЛЬНЫМ ХРАНИЛИЩЕМ
-                    console.log(ratingItem.name);//Бэтман или тот, на который щелкаешь
-                    console.log(ratingItem.value);//Бэтман или тот, на который щелкаешь
-
+                    //Запись данных в локальное хранилище
                     localStorage.setItem(`${ratingItem.name}`, ratingItem.value);
-
-                    let storedRating = localStorage.getItem(`${ratingItem.name}`);//Значение хранящегося рейтинга для конкретного персонажа
-                    console.log(storedRating);
-
+                    //Обновление значений рейтинга на странице
+                    renewRatings ();
                 });
+
             };
         };
+    };
+
+    //В работе, пока очень неэлегантно: ОБНОВЛЕНИЕ ВИДИМЫХ РЕЙТИНГОВ НА СТРАНИЦЕ ПРИ ИЗМЕНЕНИИ РЕЙТИНГА В LOCAL STORAGE
+    function renewRatings (){
+        document.getElementById(`value_${characters[0].code}`).innerHTML = localStorage.getItem(`rating_batman`);
+        document.getElementById(`value_${characters[1].code}`).innerHTML = localStorage.getItem(`rating_superman`);
+        document.getElementById(`value_${characters[2].code}`).innerHTML = localStorage.getItem(`rating_ironman`);
+        document.getElementById(`value_${characters[3].code}`).innerHTML = localStorage.getItem(`rating_spiderman`);
+        document.getElementById(`value_${characters[4].code}`).innerHTML = localStorage.getItem(`rating_captainamerica`);
+        document.getElementById(`value_${characters[5].code}`).innerHTML = localStorage.getItem(`rating_thor`);
+        document.getElementById(`value_${characters[6].code}`).innerHTML = localStorage.getItem(`rating_hulk`);
+        document.getElementById(`value_${characters[7].code}`).innerHTML = localStorage.getItem(`rating_wonderwoman`);
+        document.getElementById(`value_${characters[8].code}`).innerHTML = localStorage.getItem(`rating_blackwidow`);
+        document.getElementById(`value_${characters[9].code}`).innerHTML = localStorage.getItem(`rating_deadpool`);
     };
 
 });
