@@ -1,4 +1,3 @@
-https://developer.marvel.com - api по героям (не работает)
 https://www.ellegirl.ru/articles/vse-o-15-samyih-krutyih-supergeroyah/ - исходная статья
 
 font-family: 'Roboto', sans-serif;
