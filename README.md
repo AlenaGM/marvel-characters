@@ -1,10 +1,12 @@
 # Marvel-Characters
-_Marvel Characters database_ <img width="25px" alt="screen capture" src="../main/assets/img/logo.png">
+_Marvel Characters Database_ <img width="20px" alt="screen capture" src="../main/assets/img/logo.png"> <img width="20px" alt="screen capture" src="../main/assets/img/logo.png">
 
-Project built while learning JSON-format at [ITGirlSchool] contains: 
-1. JSON with data on Marvel characters;
-2. Gallery with pictures, characteristics and detail description of 10 Marvel heros;
-3. Possibility to give a character personal rating, for exaple 10/10 or 2/10 (rating values are stored in Local Storage)
+Project built while learning JSON-format that consists of:
+
+1. JSON, containing data on Marvel characters;
+2. Gallery with pictures, main features and detail description of 10 Marvel heros (text comes from this [article]);
+
+User has a possibility to give a personal 1 to 10 star rating to any character (rating values are stored in Local Storage)
 
 
 ## Result
