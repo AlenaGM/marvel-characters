@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 //JSON С ИНФОРМАЦИЕЙ О ГЕРОЯХ
 let json = `[{
@@ -101,16 +101,15 @@ let json = `[{
         "firends": "Мстители, Фантастическая четверка, Люди Икс",
         "superpowers": "Сверхчеловеческие рефлексы, «паучье чутье», способность прилепляться к твердым поверхностям, производство паутины",
         "moreinfo": "<br>Человек-паук родился от потребности Marvel Comics создать героя-подростка. Другие супергерои вроде Бэтмена и Супермена — взрослые мужчины, и целевая аудитория не видела в них примеры для подражания. Пятнадцатилетний Питер Паркер дал понять всем тинейджерам Земли, что можно и злодеев уничтожить, и на красавице жениться. Для этого даже не обязательно быть суперкрасавчиком! Всего лишь нужен укус паучка:). <br><br>Питер не сразу использовал свои силы во благо людей: изначально он хотел делать на них деньги, участвуя в нелегальных боях без правил. Затем его любимый дядя Бен умер от рук грабителя, и подросток поклялся, что очистит свой родной Нью-Йорк ото зла. Однако спустя время подросток понял, что одной клятвы недостаточно и что «с великой силой приходит великая ответственность». <br><br>Кстати, не все суперсилы у Питера появились за счет мутации: парень самостоятельно взломал технологию Тони Старка, после чего заслужил его признание."
-    }]`
+    }]`;
 
 //СОЗДАЕМ КАРТОЧКУ ГЕРОЯ (при загрузке страницы)
-document.addEventListener("DOMContentLoaded", function(){
-    let characters = JSON.parse(json);
-    let charactersContent = "";
+document.addEventListener("DOMContentLoaded", function () {
+  let characters = JSON.parse(json);
+  let charactersContent = "";
 
-    for (let character of characters) {
-        charactersContent +=
-            `<div class="character_item">
+  for (let character of characters) {
+    charactersContent += `<div class="character_item">
                 <img class="characterImage" src="${character.image}" alt="${character.code}"></img>
                 <h2 class="characterName" id="${character.code}">${character.name}</h2>
                 <div class="rating rating_set">
@@ -139,104 +138,106 @@ document.addEventListener("DOMContentLoaded", function(){
                     <div><span>Суперсилы:</span> ${character.superpowers}</div>
                     <div><span>Подробнее:</span> ${character.moreinfo}</div>
                 </div>
-            </div>`
-        }
+            </div>`;
+  }
 
-    document.getElementById("characters_container").innerHTML = charactersContent; //Выводи карточки на экран
-    renewRatings ();//Достаем значения рейтинга из local storage и выводим в карточку на экран
+  document.getElementById("characters_container").innerHTML = charactersContent; //Выводим карточки на экран
+  renewRatings(); //Достаем значения рейтинга из local storage и выводим в карточку на экран
 
-    //РАБОТА С РЕЙТИНГОМ (оформление звездочек)
-    const ratings = document.querySelectorAll('.rating');
+  //РАБОТА С РЕЙТИНГОМ (оформление звездочек)
+  const ratings = document.querySelectorAll(".rating");
 
-    if (ratings.length > 0) {
-        initRatings();
+  if (ratings.length > 0) {
+    initRatings();
+  }
+
+  //Основная функция
+  function initRatings() {
+    let ratingActive;
+    let ratingValue;
+
+    //Бегаем по всем рейтингам на странице
+    for (let index = 0; index < ratings.length; index++) {
+      const rating = ratings[index];
+      initRating(rating);
     }
 
-    //Основная функция
-    function initRatings (){
-        let ratingActive;
-        let ratingValue;
+    //Инициализируем конкретный рейтинг
+    function initRating(rating) {
+      initRatingVars(rating);
 
-        //Бегаем по всем рейтингам на странице
-        for (let index = 0; index < ratings.length; index++) {
-            const rating = ratings[index];
-            initRating(rating);
-        }
+      setRatingActiveWidth();
 
-        //Инициализируем конкретный рейтинг
-        function initRating(rating) {
-            initRatingVars(rating);
+      if (rating.classList.contains("rating_set")) {
+        setRating(rating);
+      }
+    }
 
-            setRatingActiveWidth();
+    //Инициализируем переменные
+    function initRatingVars(rating) {
+      ratingActive = rating.querySelector(".rating__active");
+      ratingValue = rating.querySelector(".rating__value");
+    }
 
-            if (rating.classList.contains('rating_set')) {
-                setRating(rating);
-            }
-        }
+    //Изменяем ширину активных звезд
+    function setRatingActiveWidth(index = ratingValue.innerHTML) {
+      const ratingActiveWidth = index / 0.1;
+      ratingActive.style.width = `${ratingActiveWidth}%`;
+    }
 
-        //Инициализируем переменные
-        function initRatingVars(rating) {
-            ratingActive = rating.querySelector('.rating__active');
-            ratingValue = rating.querySelector('.rating__value');
-        }
+    //Даем возможность выставить оценку
+    function setRating(rating) {
+      const ratingItems = rating.querySelectorAll(".rating__item");
 
-        //Изменяем ширину активных звезд
-        function setRatingActiveWidth(index = ratingValue.innerHTML) {
-            const ratingActiveWidth = index/ 0.1;
-            ratingActive.style.width = `${ratingActiveWidth}%`;
-        }
+      for (let index = 0; index < ratingItems.length; index++) {
+        const ratingItem = ratingItems[index];
 
-        //Даем возможность выставить оценку
-        function setRating(rating) {
-            const ratingItems = rating.querySelectorAll('.rating__item');
+        ratingItem.addEventListener("mouseenter", function (e) {
+          //Обновление переменных
+          initRatingVars(rating);
+          //Обновение активных звезд
+          setRatingActiveWidth(ratingItem.value);
+        });
 
-            for (let index = 0; index < ratingItems.length; index++){
+        ratingItem.addEventListener("mouseleave", function (e) {
+          //Обновение активных звезд
+          setRatingActiveWidth();
+        });
 
-                const ratingItem = ratingItems[index];
+        ratingItem.addEventListener("click", function (e) {
+          //Обновление переменных
+          initRatingVars(rating);
 
-                ratingItem.addEventListener('mouseenter', function(e){
-                    //Обновление переменных
-                    initRatingVars(rating);
-                    //Обновение активных звезд
-                    setRatingActiveWidth(ratingItem.value);
-                });
+          //Запись данных в локальное хранилище
+          localStorage.setItem(`${ratingItem.name}`, ratingItem.value);
+          //Обновление значений рейтинга на странице
+          renewRatings();
+        });
+      }
+    }
+  }
 
-                ratingItem.addEventListener('mouseleave', function(e){
-                    //Обновение активных звезд
-                    setRatingActiveWidth();
-                });
-
-                ratingItem.addEventListener('click', function(e){
-                    //Обновление переменных
-                    initRatingVars(rating);
-
-                    //Запись данных в локальное хранилище
-                    localStorage.setItem(`${ratingItem.name}`, ratingItem.value);
-                    //Обновление значений рейтинга на странице
-                    renewRatings ();
-                });
-            };
-        };
-    };
-
-    //В работе, пока очень неэлегантно: ОБНОВЛЕНИЕ ВИДИМЫХ РЕЙТИНГОВ НА СТРАНИЦЕ ПРИ ИЗМЕНЕНИИ РЕЙТИНГА В LOCAL STORAGE
-    function renewRatings (){
-        document.getElementById(`value_${characters[0].code}`).innerHTML = localStorage.getItem(`rating_${characters[0].code}`);
-        document.getElementById(`value_${characters[1].code}`).innerHTML = localStorage.getItem(`rating_${characters[1].code}`);
-        document.getElementById(`value_${characters[2].code}`).innerHTML = localStorage.getItem(`rating_${characters[2].code}`);
-        document.getElementById(`value_${characters[3].code}`).innerHTML = localStorage.getItem(`rating_${characters[3].code}`);
-        document.getElementById(`value_${characters[4].code}`).innerHTML = localStorage.getItem(`rating_${characters[4].code}`);
-        document.getElementById(`value_${characters[5].code}`).innerHTML = localStorage.getItem(`rating_${characters[5].code}`);
-        document.getElementById(`value_${characters[6].code}`).innerHTML = localStorage.getItem(`rating_${characters[5].code}`);
-        document.getElementById(`value_${characters[7].code}`).innerHTML = localStorage.getItem(`rating_${characters[7].code}`);
-        document.getElementById(`value_${characters[8].code}`).innerHTML = localStorage.getItem(`rating_${characters[8].code}`);
-        document.getElementById(`value_${characters[9].code}`).innerHTML = localStorage.getItem(`rating_${characters[9].code}`);
-    };
-
+  //В работе, пока очень неэлегантно: ОБНОВЛЕНИЕ ВИДИМЫХ РЕЙТИНГОВ НА СТРАНИЦЕ ПРИ ИЗМЕНЕНИИ РЕЙТИНГА В LOCAL STORAGE
+  function renewRatings() {
+    document.getElementById(`value_${characters[0].code}`).innerHTML =
+      localStorage.getItem(`rating_${characters[0].code}`);
+    document.getElementById(`value_${characters[1].code}`).innerHTML =
+      localStorage.getItem(`rating_${characters[1].code}`);
+    document.getElementById(`value_${characters[2].code}`).innerHTML =
+      localStorage.getItem(`rating_${characters[2].code}`);
+    document.getElementById(`value_${characters[3].code}`).innerHTML =
+      localStorage.getItem(`rating_${characters[3].code}`);
+    document.getElementById(`value_${characters[4].code}`).innerHTML =
+      localStorage.getItem(`rating_${characters[4].code}`);
+    document.getElementById(`value_${characters[5].code}`).innerHTML =
+      localStorage.getItem(`rating_${characters[5].code}`);
+    document.getElementById(`value_${characters[6].code}`).innerHTML =
+      localStorage.getItem(`rating_${characters[5].code}`);
+    document.getElementById(`value_${characters[7].code}`).innerHTML =
+      localStorage.getItem(`rating_${characters[7].code}`);
+    document.getElementById(`value_${characters[8].code}`).innerHTML =
+      localStorage.getItem(`rating_${characters[8].code}`);
+    document.getElementById(`value_${characters[9].code}`).innerHTML =
+      localStorage.getItem(`rating_${characters[9].code}`);
+  }
 });
-
-
-
-
-
-
