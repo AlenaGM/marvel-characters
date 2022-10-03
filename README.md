@@ -28,5 +28,5 @@ User has a possibility to give a personal 1 to 10 star rating to any character (
   
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
-   [Marvel-Characters]: <alenagm.github.io/Marvel-Characters/>
+   [Marvel-Characters]: <https://alenagm.github.io/Marvel-Characters/>
    [article]: <https://www.ellegirl.ru/articles/vse-o-15-samyih-krutyih-supergeroyah/>
