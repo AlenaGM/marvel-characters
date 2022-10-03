@@ -13,6 +13,7 @@ User has a possibility to give a personal 1 to 10 star rating to any character (
 <img width="35%" alt="screen capture" src="../main/assets/img/сaptureweb.jpeg">
 
 ## Demo
+
 [Marvel-Characters]
 
 ## Tech stack
