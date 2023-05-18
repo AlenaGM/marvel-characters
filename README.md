@@ -1,7 +1,7 @@
 # Marvel-Characters
 _Marvel Characters Database_ <img width="20px" alt="screen capture" src="../main/assets/img/logo.png"> <img width="20px" alt="screen capture" src="../main/assets/img/logo.png">
 
-Project built while learning JSON-format that includes: 
+Project built while learning JSON-format. The project includes: 
 
 1. JSON, containing data on Marvel characters;
 2. Gallery with pictures, main features and detail description of 10 Marvel heros (text taken from this [article]);
