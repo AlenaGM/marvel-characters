@@ -3,7 +3,7 @@
 //JSON С ИНФОРМАЦИЕЙ О ГЕРОЯХ
 let json = `[{
         "name": "Бэтмен",
-        "code": "batman",
+        "id": "batman",
         "image": "assets/img/batman.jpg",
         "universe": "DC Comics",
         "alterego": "Брюс Уэйн",
@@ -13,7 +13,7 @@ let json = `[{
         "moreinfo": "<br>По популярности человек-летучая мышь может сравниться только с Суперменом. Его образ кажется очень мистическим и мрачным: черный костюм с развевающимся плащом, устрашающий Бэтмобиль, штаб-квартира в сырой пещере. Его биография настолько же темна, как и образ. В детстве у него на глазах убили родителей, и юный Брюс поклялся всеми силами защищать родной Готэм от преступности. <br><br>Брюс знаменит, несмотря на пожилой возраст: первый выпуск с его участием вышел аж в 1939 году. С каждым годом популярность только крепнет. Большую роль в этом сыграли экранизации: «Темный рыцарь», сериал «Готэм» и несколько одноименных картин. Главная причина такой любви среди фанатов — мысль, что каждый может стать Бэтменом. <br><br>Если подумать, это один из немногих героев, кто добился своего положения за счет ума и упорства, а не за счет мутаций."
     },{
         "name": "Супермен",
-        "code": "superman",
+        "id": "superman",
         "image": "assets/img/superman.jpg",
         "universe": "DC Comics",
         "alterego": "Кларк Кент",
@@ -23,7 +23,7 @@ let json = `[{
         "moreinfo": "<br>Полная противоположность своему противнику Бэтмену. Если Брюс Уэйн был простым человеком и стал героем, то Супермен героем родился, но вынужден был изображать выходца из бедной канзасской семьи. Последний представитель планеты Криптон был отправлен на Землю прямо перед тем, как его родина была уничтожена. <br><br>Супермен — некий хамелеон от мира комиксов. В своем первом выпуске в 1938 году он был просто человек-огромный мускул, который умел только разбивать стены и выбивать двери. Позднее к его умениям добавилась способность летать. Дальше у многочисленных воплощений Кларка, от подростка в «Тайнах Смоллвиля» до величественного «Человека из стали», разный уровень и количество суперспособностей. Неизменным остается его слабое место — уязвимость к Криптониту, радиоактивному веществу с родной планеты."
     },{
         "name": "Черная вдова",
-        "code": "blackwidow",
+        "id": "blackwidow",
         "image": "assets/img/blackwidow.jpg",
         "universe": "Marvel Comics",
         "alterego": "Наташа Романофф",
@@ -33,7 +33,7 @@ let json = `[{
         "moreinfo": "<br>Супергероиня российского происхождения родилась предположительно в 1928 году в Сталинграде. Во время Второй мировой войны она потеряла родителей и была спасена из горящего дома советским солдатом. Тот на некоторое время стал ее опекуном. Повзрослев, Наташа попала в организацию «Красная Комната», где прошла многочисленные тренировки, а именно — была частью шпионской программы. <br><br>Там же ей вживили сыворотку Суперсолдата — как у Капитана Америки, но в советском варианте. Благодаря ей Наташа может использовать максимальные возможности своего организма: силу, гибкость, скорость, ловкость и т. д. Также сыворотка дает эффект замедленного старения. По мнению фанатов, самое главное преимущество Черной Вдовы — то, что ее сыграла красотка Скарлетт Йоханссон :)"
     },{
         "name": "Чудо-женщина",
-        "code": "wonderwoman",
+        "id": "wonderwoman",
         "image": "assets/img/wonderwoman.jpg",
         "universe": "DC Comics",
         "alterego": "Диана Принс",
@@ -43,7 +43,7 @@ let json = `[{
         "moreinfo": "<br>Пора бы разбавить эту мужскую вечеринку по-настоящему крутой девчонкой :) Принцесса-амозонка родилась на мистическом острове Темескира, расположенном в центре Бермудского треугольника, где пропадают самолеты. Свое настоящее имя — Диана — она получила в честь древнегреческой богини охоты, а суперспособности — от богини любви Афродиты. Растили героиню в исключительно женском обществе, поэтому Чудо-женщина часто появляется в культуре как символ феминизма. <br><br>У Дианы есть супер-снаряжение: лассо истины и тиара. Первое было сковано богом огня Гефестом, и оно никогда не промахивается. Человек, попавший в его петлю, неизбежно расскажет свои секреты, вспомнит забытое и даже подчинится приказам. Тиара же работает как метательное оружие, способное рассечь что угодно. Корона со звездой в центре символизирует патриотизм американской героини и служит стильным аксессуаром :)"
     },{
         "name": "Капитан Америка",
-        "code": "captainamerica",
+        "id": "captainamerica",
         "image": "assets/img/captainamerica.jpg",
         "universe": "Marvel Comics",
         "alterego": "Стивен Роджерс",
@@ -53,7 +53,7 @@ let json = `[{
         "moreinfo": "<br>Капитан Америка — персонаж, целеноправленно созданный, чтобы воплощать идеалы патриотизма. Потому он был особенно популярный во время Второй мировой войны. В комиксах обращение «Капитан Америка» применяется к любому, кто выбран правительством США. Больше всего оно закрепилось именно за Стивом Роджерсом. <br><br>Стив родился в 1917 году в семье ирландских эмигрантов Сары и Джозефа Роджерсов. В детстве он был очень слабым юношей и постоянно подвергался насмешкам со стороны других ребят. Ирландские корни давали о себе знать, потому парень от драки не лез. В начале Второй мировой войны Стивен стремился попасть на фронт. Естественно, из-за здоровья ему отказывали. <br><br>По воле судьбы ему предложили принять участие в секретном оборонном проекте, целью которого было создание суперсолдат. Несмотря на сложности во время эксперимента, результат был успешным. Роджерс превратился из хилого юноши в настоящего Аполлона. Актер Крис Эванс с этой ролью вполне справился:)"
     },{
         "name": "Железный человек",
-        "code": "ironman",
+        "id": "ironman",
         "image": "assets/img/ironman.jpg",
         "universe": "Marvel Comics",
         "alterego": "Тони Старк",
@@ -63,7 +63,7 @@ let json = `[{
         "moreinfo": "<br>Пожалуй, самый популярный современный супергерой. У него много общего с мрачной птицей ночи Бэтменом: оба потеряли родителей в детстве, стали борцами с преступностью без особых сверхсил, невероятно богатые. Только если Бэтменом восхищаются, то Тони Старка — обожают :) То ли дело в шикарной актерской игре Роберта Дауни мл., который выбил роль у Николаса Кейджа и Тома Круза, то ли в хорошо прописанном персонаже. <br><br>Прототипом для героя послужили Илон Маск и изобретатель Говард Хьюз. <br><br>Железный Человек не всегда ходил в красном модном костюме: в своих первых версиях 1963 года он был скромного серого цвета. Увы, в киновоплощении бронекостюм даже не из металла — его делали из пластика и стекловолокна."
     },{
         "name": "Халк",
-        "code": "hulk",
+        "id": "hulk",
         "image": "assets/img/hulk.jpg",
         "universe": "Marvel Comics",
         "alterego": "Брюс Беннер",
@@ -73,7 +73,7 @@ let json = `[{
         "moreinfo": "<br>Идею создания Халка как персонажа можно отнести к фантастической новелле «Странная история доктора Джекила и мистера Хайда», в которой ученый не может примириться со своим демоническим альтер эго. Прошлое у Халка — хуже некуда: отец Брюса страдал от алкоголизма и приступов ярости, а мать пыталась всеми силами уберечь сына от гнева своего мужа. Она погибла, защищая своего единственного ребенка от его побоев. <br><br>Пронеся через все детство тяжелый психологический груз, Брюс вырос в чрезвычайно одаренного, но замкнутого юношу. Хотя Брюс не мог уважать отца, но пошел в науке по его стопам и выбрал ядерную физику. Во время эксперимента он ввел себе пробную сыворотку и подверг себя воздействию большого количества гамма-радиации. Беннер превратился в мускулистого неуправляемого гиганта, который крушил все вокруг и не понимал, что происходит. Так имя Халка стало нарицательным для людей, который не могут держать себя в руках."
     },{
         "name": "Тор",
-        "code": "thor",
+        "id": "thor",
         "image": "assets/img/thor.jpg",
         "universe": "Marvel Comics",
         "alterego": "Нет; полное имя — Тор Одинсон",
@@ -83,7 +83,7 @@ let json = `[{
         "moreinfo": "<br>Персонаж Тора основан на образе одноименного скандинавского бога. Тор во вселенной Marvel — родной сын Одина и древнейшей богини Геи. После рождения сына Один забрал его в Асгард, где растил вместе со своей женой, богиней Фригг. Последнюю Тор всегда считал своей настоящей матерью и лишь много позже узнал правду о своем рождении. <br>Стоит сказать, что до нынешнего Тора в исполнении Криса Хемсворта у супергероя было несколько воплощений. В одном из них он погиб в схватке с мифическим змеем Мидгардом. Это привело к Рагнареку — некоему апокалипсису в скандинавской мифологии."
     },{
         "name": "Дэдпул",
-        "code": "deadpool",
+        "id": "deadpool",
         "image": "assets/img/deadpool.jpg",
         "universe": "Marvel Comics",
         "alterego": "Уэйд Уинстон Уилсон",
@@ -93,7 +93,7 @@ let json = `[{
         "moreinfo": "<br>Как и Росомаха из Людей Икс, Дэдпул был подвергнут опытам по программе «Оружие Икс». Ученые попытались исцелить его рак, привив его клеткам способность к регенерации. Как и всегда в комиксах, что-то пошло не так, и Дэдпул остался изуродованным и психически нестабильным. <br><br>Это единственный супергерой из списка, который однозначно не на стороне добра. Дэдпул наслаждается насилием. Первоначально появившись в основной Вселенной Marvel, он получил альтернативные варианты в других реальностях Мультивселенной. Что оставалось неизменным — его циничное, черное чувство юмора: за него Дэдпула прозвали «Болтливым наемником»."
     },{
         "name": "Человек-паук",
-        "code": "spiderman",
+        "id": "spiderman",
         "image": "assets/img/spiderman.jpg",
         "universe": "Marvel Comics",
         "alterego": "Питер Паркер",
@@ -110,25 +110,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   for (let character of characters) {
     charactersContent += `<div class="character_item">
-                <img class="characterImage" src="${character.image}" alt="${character.code}"></img>
-                <h2 class="characterName" id="${character.code}">${character.name}</h2>
+                <img class="characterImage" src="${character.image}" alt="${character.id}"></img>
+                <h2 class="characterName" id="${character.id}">${character.name}</h2>
                 <div class="rating rating_set">
                     <div class="rating__body">
                         <div class="rating__active"></div>
                         <div class="rating__items">
-                            <input type ="radio" class="rating__item" value="1" name="rating_${character.code}"></input>
-                            <input type ="radio" class="rating__item" value="2" name="rating_${character.code}"></input>
-                            <input type ="radio" class="rating__item" value="3" name="rating_${character.code}"></input>
-                            <input type ="radio" class="rating__item" value="4" name="rating_${character.code}"></input>
-                            <input type ="radio" class="rating__item" value="5" name="rating_${character.code}"></input>
-                            <input type ="radio" class="rating__item" value="6" name="rating_${character.code}"></input>
-                            <input type ="radio" class="rating__item" value="7" name="rating_${character.code}"></input>
-                            <input type ="radio" class="rating__item" value="8" name="rating_${character.code}"></input>
-                            <input type ="radio" class="rating__item" value="9" name="rating_${character.code}"></input>
-                            <input type ="radio" class="rating__item" value="10" name="rating_${character.code}"></input>
+                            <input type ="radio" class="rating__item" value="1" name="rating_${character.id}"></input>
+                            <input type ="radio" class="rating__item" value="2" name="rating_${character.id}"></input>
+                            <input type ="radio" class="rating__item" value="3" name="rating_${character.id}"></input>
+                            <input type ="radio" class="rating__item" value="4" name="rating_${character.id}"></input>
+                            <input type ="radio" class="rating__item" value="5" name="rating_${character.id}"></input>
+                            <input type ="radio" class="rating__item" value="6" name="rating_${character.id}"></input>
+                            <input type ="radio" class="rating__item" value="7" name="rating_${character.id}"></input>
+                            <input type ="radio" class="rating__item" value="8" name="rating_${character.id}"></input>
+                            <input type ="radio" class="rating__item" value="9" name="rating_${character.id}"></input>
+                            <input type ="radio" class="rating__item" value="10" name="rating_${character.id}"></input>
                         </div>
                     </div>
-                    <div class="rating__value" id="value_${character.code}"></div>
+                    <div class="rating__value" id="value_${character.id}"></div>
                 </div>
                 <div class="characterInfo">
                     <div><span>Вселенная:</span> ${character.universe}</div>
@@ -219,25 +219,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //В работе, пока очень неэлегантно: ОБНОВЛЕНИЕ ВИДИМЫХ РЕЙТИНГОВ НА СТРАНИЦЕ ПРИ ИЗМЕНЕНИИ РЕЙТИНГА В LOCAL STORAGE
   function renewRatings() {
-    document.getElementById(`value_${characters[0].code}`).innerHTML =
-      localStorage.getItem(`rating_${characters[0].code}`);
-    document.getElementById(`value_${characters[1].code}`).innerHTML =
-      localStorage.getItem(`rating_${characters[1].code}`);
-    document.getElementById(`value_${characters[2].code}`).innerHTML =
-      localStorage.getItem(`rating_${characters[2].code}`);
-    document.getElementById(`value_${characters[3].code}`).innerHTML =
-      localStorage.getItem(`rating_${characters[3].code}`);
-    document.getElementById(`value_${characters[4].code}`).innerHTML =
-      localStorage.getItem(`rating_${characters[4].code}`);
-    document.getElementById(`value_${characters[5].code}`).innerHTML =
-      localStorage.getItem(`rating_${characters[5].code}`);
-    document.getElementById(`value_${characters[6].code}`).innerHTML =
-      localStorage.getItem(`rating_${characters[5].code}`);
-    document.getElementById(`value_${characters[7].code}`).innerHTML =
-      localStorage.getItem(`rating_${characters[7].code}`);
-    document.getElementById(`value_${characters[8].code}`).innerHTML =
-      localStorage.getItem(`rating_${characters[8].code}`);
-    document.getElementById(`value_${characters[9].code}`).innerHTML =
-      localStorage.getItem(`rating_${characters[9].code}`);
+    document.getElementById(`value_${characters[0].id}`).innerHTML =
+      localStorage.getItem(`rating_${characters[0].id}`);
+    document.getElementById(`value_${characters[1].id}`).innerHTML =
+      localStorage.getItem(`rating_${characters[1].id}`);
+    document.getElementById(`value_${characters[2].id}`).innerHTML =
+      localStorage.getItem(`rating_${characters[2].id}`);
+    document.getElementById(`value_${characters[3].id}`).innerHTML =
+      localStorage.getItem(`rating_${characters[3].id}`);
+    document.getElementById(`value_${characters[4].id}`).innerHTML =
+      localStorage.getItem(`rating_${characters[4].id}`);
+    document.getElementById(`value_${characters[5].id}`).innerHTML =
+      localStorage.getItem(`rating_${characters[5].id}`);
+    document.getElementById(`value_${characters[6].id}`).innerHTML =
+      localStorage.getItem(`rating_${characters[5].id}`);
+    document.getElementById(`value_${characters[7].id}`).innerHTML =
+      localStorage.getItem(`rating_${characters[7].id}`);
+    document.getElementById(`value_${characters[8].id}`).innerHTML =
+      localStorage.getItem(`rating_${characters[8].id}`);
+    document.getElementById(`value_${characters[9].id}`).innerHTML =
+      localStorage.getItem(`rating_${characters[9].id}`);
   }
 });
