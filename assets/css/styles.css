@@ -3,7 +3,7 @@ body {
   height: 100%;
   font-family: "Roboto", sans-serif;
   line-height: 160%;
-  font-size: 14px;
+  font-size: 16px;
   color: #ffffff;
   background-color: #202020;
 }
@@ -11,51 +11,40 @@ body {
 .wrapper {
   display: grid;
   min-height: 100%;
-  grid-template-columns: minmax(24px, 1fr) minmax(auto, 1200px) minmax(
+  grid-template: minmax(80px, auto) 1fr / minmax(24px, 1fr) minmax(auto, 1200px) minmax(
       24px,
       1fr
     );
-  grid-template-rows: minmax(80px, auto) 1fr minmax(60px, auto);
-  grid-template-areas:
-    "header header header"
-    ". main ."
-    ". footer .";
 }
 
 .header {
-  grid-area: header;
+  grid-column: 1/4;
   background: linear-gradient(45deg, #ed1d24e3, #ed1f69e3);
   box-shadow: 2px 4px #2020203b;
-  margin: -24px -24px 10px -24px;
-}
-
-.main {
-  grid-area: main;
-}
-
-.footer {
-  grid-area: footer;
+  padding: 40px 24px 12px;
 }
 
 .header__title {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 44px;
+  font-size: 42px;
   color: #ffffff;
   line-height: 120%;
-  margin: 40px 24px 12px;
   text-align: center;
   text-shadow: 2px 2px #2020203b;
 }
 
+.main {
+  grid-column: 2;
+}
+
 .characters__container {
-  grid-area: main;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   column-gap: 30px;
-  row-gap: 40px;
-  margin-top: 24px;
+  row-gap: 64px;
+  margin: 30px 0;
   justify-items: center;
 }
 
@@ -79,27 +68,24 @@ body {
   text-shadow: 2px 2px #20202093;
 }
 
+.character__info {
+  font-weight: normal;
+  font-size: 16px;
+}
+
 .character__info span {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 14px;
   color: #f2264b;
-  margin: 0px 0px 24px;
 }
 
-.character__info {
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  font-size: 16px;
-  margin: 0px 0px 24px;
-}
-
-.character__info div {
+.character__info div:not(:last-of-type) {
   margin: 0px 0px 14px;
 }
 
-/*----РЕЙТИНГ----*/
+/*----RATING----*/
 .rating {
   display: flex;
   align-items: flex-end;
@@ -165,12 +151,20 @@ body {
   padding: 0px 0px 0px 10px;
 }
 
-@media screen and (max-width: 913px) {
+/*----MEDIA QUERIES----*/
+@media screen and (max-width: 767px) {
+  .header {
+    padding-top: 24px;
+    padding-bottom: 8px;
+  }
+
   .header__title {
-    margin: 30px 30px 8px;
+    font-size: 32px;
   }
 
   .characters__container {
-    row-gap: 20px;
+    column-gap: 20px;
+    row-gap: 44px;
+    margin: 20px 0;
   }
 }
