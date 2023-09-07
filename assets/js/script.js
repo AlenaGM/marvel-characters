@@ -192,19 +192,19 @@ document.addEventListener("DOMContentLoaded", function () {
       for (let index = 0; index < ratingItems.length; index++) {
         const ratingItem = ratingItems[index];
 
-        ratingItem.addEventListener("mouseenter", function (e) {
+        ratingItem.addEventListener("mouseenter", function () {
           //Обновление переменных
           initRatingVars(rating);
           //Обновение активных звезд
           setRatingActiveWidth(ratingItem.value);
         });
 
-        ratingItem.addEventListener("mouseleave", function (e) {
+        ratingItem.addEventListener("mouseleave", function () {
           //Обновение активных звезд
           setRatingActiveWidth();
         });
 
-        ratingItem.addEventListener("click", function (e) {
+        ratingItem.addEventListener("click", function () {
           //Обновление переменных
           initRatingVars(rating);
 
