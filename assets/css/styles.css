@@ -1,3 +1,35 @@
+/* Reset base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+header,
+main {
+  display: block;
+}
+
+h1,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+/*Styles*/
+
 html,
 body {
   height: 100%;

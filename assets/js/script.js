@@ -1,6 +1,6 @@
 "use strict";
 
-//JSON С ИНФОРМАЦИЕЙ О ГЕРОЯХ
+//JSON WITH INFORMATION ABOUT CHARACTERS
 let json = `[{
   "name": "Batman",
   "id": "batman",
@@ -80,7 +80,7 @@ let json = `[{
   "activity": "Борец за справедливость, скандинавский бог",
   "friends": "Мстители",
   "superpowers": "Все, что может бог, плюс молот Мьелнир",
-  "moreinfo": "<br>Персонаж Тора основан на образе одноименного скандинавского бога. Тор во вселенной Marvel — родной сын Одина и древнейшей богини Геи. После рождения сына Один забрал его в Асгард, где растил вместе со своей женой, богиней Фригг. Последнюю Тор всегда считал своей настоящей матерью и лишь много позже узнал правду о своем рождении. <br>Стоит сказать, что до нынешнего Тора в исполнении Криса Хемсворта у супергероя было несколько воплощений. В одном из них он погиб в схватке с мифическим змеем Мидгардом. Это привело к Рагнареку — некоему апокалипсису в скандинавской мифологии."
+  "moreinfo": "<br>Персонаж Тора основан на образе одноименного скандинавского бога. Тор во вселенной Marvel — родной сын Одина и древнейшей богини Геи. После рождения сына Один забрал его в Асгард, где растил вместе со своей женой, богиней Фригг. Последнюю Тор всегда считал своей настоящей матерью и лишь много позже узнал правду о своем рождении. <br><br>Стоит сказать, что до нынешнего Тора в исполнении Криса Хемсворта у супергероя было несколько воплощений. В одном из них он погиб в схватке с мифическим змеем Мидгардом. Это привело к Рагнареку — некоему апокалипсису в скандинавской мифологии."
 },{
   "name": "Дэдпул",
   "id": "deadpool",
@@ -103,7 +103,7 @@ let json = `[{
   "moreinfo": "<br>Человек-паук родился от потребности Marvel Comics создать героя-подростка. Другие супергерои вроде Бэтмена и Супермена — взрослые мужчины, и целевая аудитория не видела в них примеры для подражания. Пятнадцатилетний Питер Паркер дал понять всем тинейджерам Земли, что можно и злодеев уничтожить, и на красавице жениться. Для этого даже не обязательно быть суперкрасавчиком! Всего лишь нужен укус паучка:). <br><br>Питер не сразу использовал свои силы во благо людей: изначально он хотел делать на них деньги, участвуя в нелегальных боях без правил. Затем его любимый дядя Бен умер от рук грабителя, и подросток поклялся, что очистит свой родной Нью-Йорк ото зла. Однако спустя время подросток понял, что одной клятвы недостаточно и что «с великой силой приходит великая ответственность». <br><br>Кстати, не все суперсилы у Питера появились за счет мутации: парень самостоятельно взломал технологию Тони Старка, после чего заслужил его признание."
 }]`;
 
-//СОЗДАЕМ КАРТОЧКУ ГЕРОЯ (при загрузке страницы)
+//CREATING CHARACTER CARD (on page load)
 document.addEventListener("DOMContentLoaded", function () {
   let characters = JSON.parse(json);
   let charactersContent = "";
@@ -142,28 +142,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document.getElementById("characters__container").innerHTML =
-    charactersContent; //Выводим карточки на экран
-  renewRatings(); //Достаем значения рейтинга из local storage и выводим в карточку на экран
+    charactersContent; //Display the cards on the screen
+  renewRatings(); //Retrieve rating values from local storage and display them on the card
 
-  //РАБОТА С РЕЙТИНГОМ (оформление звездочек)
+  //WORKING WITH RATING (star formatting)
   const ratings = document.querySelectorAll(".rating");
 
   if (ratings.length > 0) {
     initRatings();
   }
 
-  //Основная функция
+  //Main rating function
   function initRatings() {
     let ratingActive;
     let ratingValue;
 
-    //Бегаем по всем рейтингам на странице
+    //Loop through all ratings on the page
     for (let index = 0; index < ratings.length; index++) {
       const rating = ratings[index];
       initRating(rating);
     }
 
-    //Инициализируем конкретный рейтинг
+    //Loop through all ratings on the page
     function initRating(rating) {
       initRatingVars(rating);
 
@@ -174,19 +174,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    //Инициализируем переменные
+    //Initialize variables
     function initRatingVars(rating) {
       ratingActive = rating.querySelector(".rating__active");
       ratingValue = rating.querySelector(".rating__value");
     }
 
-    //Изменяем ширину активных звезд
+    //Change the width of active stars
     function setRatingActiveWidth(index = ratingValue.innerHTML) {
       const ratingActiveWidth = index / 0.1;
       ratingActive.style.width = `${ratingActiveWidth}%`;
     }
 
-    //Даем возможность выставить оценку
+    //Allow rating to be set
     function setRating(rating) {
       const ratingItems = rating.querySelectorAll(".rating__item");
 
@@ -194,51 +194,34 @@ document.addEventListener("DOMContentLoaded", function () {
         const ratingItem = ratingItems[index];
 
         ratingItem.addEventListener("mouseenter", function () {
-          //Обновление переменных
+          //Update variables
           initRatingVars(rating);
-          //Обновение активных звезд
+          //Update active stars
           setRatingActiveWidth(ratingItem.value);
         });
 
         ratingItem.addEventListener("mouseleave", function () {
-          //Обновение активных звезд
+          //Update active stars
           setRatingActiveWidth();
         });
 
         ratingItem.addEventListener("click", function () {
-          //Обновление переменных
+          //Update variables
           initRatingVars(rating);
-
-          //Запись данных в локальное хранилище
+          //Write data to local storage
           localStorage.setItem(`${ratingItem.name}`, ratingItem.value);
-          //Обновление значений рейтинга на странице
+          //Update rating values on the page.
           renewRatings();
         });
       }
     }
   }
 
-  //В работе, пока очень неэлегантно: ОБНОВЛЕНИЕ ВИДИМЫХ РЕЙТИНГОВ НА СТРАНИЦЕ ПРИ ИЗМЕНЕНИИ РЕЙТИНГА В LOCAL STORAGE
+  //RENEWING RATINGS VISIBLE ON THE PAGE  UPON RATING CHANGE IN LOCAL STARAGE
   function renewRatings() {
-    document.getElementById(`value_${characters[0].id}`).innerHTML =
-      localStorage.getItem(`rating_${characters[0].id}`);
-    document.getElementById(`value_${characters[1].id}`).innerHTML =
-      localStorage.getItem(`rating_${characters[1].id}`);
-    document.getElementById(`value_${characters[2].id}`).innerHTML =
-      localStorage.getItem(`rating_${characters[2].id}`);
-    document.getElementById(`value_${characters[3].id}`).innerHTML =
-      localStorage.getItem(`rating_${characters[3].id}`);
-    document.getElementById(`value_${characters[4].id}`).innerHTML =
-      localStorage.getItem(`rating_${characters[4].id}`);
-    document.getElementById(`value_${characters[5].id}`).innerHTML =
-      localStorage.getItem(`rating_${characters[5].id}`);
-    document.getElementById(`value_${characters[6].id}`).innerHTML =
-      localStorage.getItem(`rating_${characters[5].id}`);
-    document.getElementById(`value_${characters[7].id}`).innerHTML =
-      localStorage.getItem(`rating_${characters[7].id}`);
-    document.getElementById(`value_${characters[8].id}`).innerHTML =
-      localStorage.getItem(`rating_${characters[8].id}`);
-    document.getElementById(`value_${characters[9].id}`).innerHTML =
-      localStorage.getItem(`rating_${characters[9].id}`);
+    for (const [index] of characters.entries()) {
+      document.getElementById(`value_${characters[index].id}`).innerHTML =
+        localStorage.getItem(`rating_${characters[index].id}`);
+    }
   }
 });
