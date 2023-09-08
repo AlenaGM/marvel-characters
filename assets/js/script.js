@@ -5,7 +5,7 @@ let json = `[
   {
     "name": "Batman",
     "id": "batman",
-    "image": "assets/img/batman.jpg",
+    "image": "assets/img/batman",
     "universe": "DC Comics",
     "alterego": "Bruce Wayne",
     "activity": "Crime fighter, philanthropist, billionaire",
@@ -16,7 +16,7 @@ let json = `[
   {
     "name": "Superman",
     "id": "superman",
-    "image": "assets/img/superman.jpg",
+    "image": "assets/img/superman",
     "universe": "DC Comics",
     "alterego": "Clark Kent",
     "activity": "Fighter for justice",
@@ -27,7 +27,7 @@ let json = `[
   {
     "name": "Black Widow",
     "id": "blackwidow",
-    "image": "assets/img/blackwidow.jpg",
+    "image": "assets/img/blackwidow",
     "universe": "Marvel Comics",
     "alterego": "Natasha Romanoff",
     "activity": "Superhero, spy",
@@ -38,7 +38,7 @@ let json = `[
   {
     "name": "Wonder Woman",
     "id": "wonderwoman",
-    "image": "assets/img/wonderwoman.jpg",
+    "image": "assets/img/wonderwoman",
     "universe": "DC Comics",
     "alterego": "Diana Prince",
     "activity": "Superhero, secretary",
@@ -49,7 +49,7 @@ let json = `[
   {
     "name": "Captain America",
     "id": "captainamerica",
-    "image": "assets/img/captainamerica.jpg",
+    "image": "assets/img/captainamerica",
     "universe": "Marvel Comics",
     "alterego": "Steve Rogers",
     "activity": "Super Soldier",
@@ -60,7 +60,7 @@ let json = `[
   {
     "name": "Iron Man",
     "id": "ironman",
-    "image": "assets/img/ironman.jpg",
+    "image": "assets/img/ironman",
     "universe": "Marvel Comics",
     "alterego": "Tony Stark",
     "activity": "Genius, billionaire, playboy, philanthropist",
@@ -71,7 +71,7 @@ let json = `[
   {
     "name": "Hulk",
     "id": "hulk",
-    "image": "assets/img/hulk.jpg",
+    "image": "assets/img/hulk",
     "universe": "Marvel Comics",
     "alterego": "Bruce Banner",
     "activity": "Superhero, fighter for justice, biochemist",
@@ -82,7 +82,7 @@ let json = `[
   {
     "name": "Thor",
     "id": "thor",
-    "image": "assets/img/thor.jpg",
+    "image": "assets/img/thor",
     "universe": "Marvel Comics",
     "alterego": "None; full name - Thor Odinson",
     "activity": "Fighter for justice, Scandinavian god",
@@ -93,7 +93,7 @@ let json = `[
   {
     "name": "Deadpool",
     "id": "deadpool",
-    "image": "assets/img/deadpool.jpg",
+    "image": "assets/img/deadpool",
     "universe": "Marvel Comics",
     "alterego": "Wade Winston Wilson",
     "activity": "Anti-hero, mercenary",
@@ -104,7 +104,7 @@ let json = `[
   {
     "name": "Spider-Man",
     "id": "spiderman",
-    "image": "assets/img/spiderman.jpg",
+    "image": "assets/img/spiderman",
     "universe": "Marvel Comics",
     "alterego": "Peter Parker",
     "activity": "Fighter for justice, student, photographer",
@@ -121,35 +121,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
   for (const character of characters) {
     charactersContent += `<div class="character__item">
-                <img class="character__image" src="${character.image}" alt="${character.id}"></img>
-                <h2 class="character__name" id="${character.id}">${character.name}</h2>
-                <div class="character__rating rating rating_set">
-                    <div class="rating__body">
-                        <div class="rating__active"></div>
-                        <div class="rating__items">
-                            <input type ="radio" class="rating__item" value="1" name="rating_${character.id}" aria-label="star-rating: 1 star"></input>
-                            <input type ="radio" class="rating__item" value="2" name="rating_${character.id}" aria-label="star-rating: 2 stars"></input>
-                            <input type ="radio" class="rating__item" value="3" name="rating_${character.id}" aria-label="star-rating: 3 stars"></input>
-                            <input type ="radio" class="rating__item" value="4" name="rating_${character.id}" aria-label="star-rating: 4 stars"></input>
-                            <input type ="radio" class="rating__item" value="5" name="rating_${character.id}" aria-label="star-rating: 5 stars"></input>
-                            <input type ="radio" class="rating__item" value="6" name="rating_${character.id}" aria-label="star-rating: 6 stars"></input>
-                            <input type ="radio" class="rating__item" value="7" name="rating_${character.id}" aria-label="star-rating: 7 stars"></input>
-                            <input type ="radio" class="rating__item" value="8" name="rating_${character.id}" aria-label="star-rating: 8 stars"></input>
-                            <input type ="radio" class="rating__item" value="9" name="rating_${character.id}" aria-label="star-rating: 9 stars"></input>
-                            <input type ="radio" class="rating__item" value="10" name="rating_${character.id}" aria-label="star-rating: 10 stars"></input>
-                        </div>
-                    </div>
-                    <div class="rating__value" id="value_${character.id}"></div>
-                </div>
-                <div class="character__info">
-                    <div><span>Universe:</span> ${character.universe}</div>
-                    <div><span>Alter Ego:</span> ${character.alterego}</div>
-                    <div><span>Activity:</span>  ${character.activity}</div>
-                    <div><span>Friends:</span> ${character.friends}</div>
-                    <div><span>Super Powers:</span> ${character.superpowers}</div>
-                    <div><span>More Details:</span> ${character.moreinfo}</div>
-                </div>
-            </div>`;
+      <picture class="character__image">
+        <source
+          srcset="${character.image}.webp"
+          type="image/webp"
+        />
+        <img
+          src="${character.image}.jpg"
+          srcset="${character.image}.jpg"
+          alt="${character.id}"
+        />
+      </picture>
+      <h2 class="character__name" id="${character.id}">${character.name}</h2>
+      <div class="character__rating rating rating_set">
+          <div class="rating__body">
+              <div class="rating__active"></div>
+              <div class="rating__items">
+                  <input type ="radio" class="rating__item" value="1" name="rating_${character.id}" aria-label="star-rating: 1 star"></input>
+                  <input type ="radio" class="rating__item" value="2" name="rating_${character.id}" aria-label="star-rating: 2 stars"></input>
+                  <input type ="radio" class="rating__item" value="3" name="rating_${character.id}" aria-label="star-rating: 3 stars"></input>
+                  <input type ="radio" class="rating__item" value="4" name="rating_${character.id}" aria-label="star-rating: 4 stars"></input>
+                  <input type ="radio" class="rating__item" value="5" name="rating_${character.id}" aria-label="star-rating: 5 stars"></input>
+                  <input type ="radio" class="rating__item" value="6" name="rating_${character.id}" aria-label="star-rating: 6 stars"></input>
+                  <input type ="radio" class="rating__item" value="7" name="rating_${character.id}" aria-label="star-rating: 7 stars"></input>
+                  <input type ="radio" class="rating__item" value="8" name="rating_${character.id}" aria-label="star-rating: 8 stars"></input>
+                  <input type ="radio" class="rating__item" value="9" name="rating_${character.id}" aria-label="star-rating: 9 stars"></input>
+                  <input type ="radio" class="rating__item" value="10" name="rating_${character.id}" aria-label="star-rating: 10 stars"></input>
+              </div>
+          </div>
+          <div class="rating__value" id="value_${character.id}"></div>
+      </div>
+      <div class="character__info">
+          <div><span>Universe:</span> ${character.universe}</div>
+          <div><span>Alter Ego:</span> ${character.alterego}</div>
+          <div><span>Activity:</span>  ${character.activity}</div>
+          <div><span>Friends:</span> ${character.friends}</div>
+          <div><span>Super Powers:</span> ${character.superpowers}</div>
+          <div><span>More Details:</span> ${character.moreinfo}</div>
+      </div>
+    </div>`;
   }
 
   document.getElementById("characters__container").innerHTML =
