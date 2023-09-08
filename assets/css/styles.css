@@ -89,8 +89,9 @@ body {
 
 .character__image {
   width: 100%;
+  max-width: 375px;
+  max-height: 375px;
   object-fit: cover;
-  aspect-ratio: 1;
   box-shadow: 0 2px 4px #3131403b;
 }
 
