@@ -127,16 +127,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="rating__body">
                         <div class="rating__active"></div>
                         <div class="rating__items">
-                            <input type ="radio" class="rating__item" value="1" name="rating_${character.id}"></input>
-                            <input type ="radio" class="rating__item" value="2" name="rating_${character.id}"></input>
-                            <input type ="radio" class="rating__item" value="3" name="rating_${character.id}"></input>
-                            <input type ="radio" class="rating__item" value="4" name="rating_${character.id}"></input>
-                            <input type ="radio" class="rating__item" value="5" name="rating_${character.id}"></input>
-                            <input type ="radio" class="rating__item" value="6" name="rating_${character.id}"></input>
-                            <input type ="radio" class="rating__item" value="7" name="rating_${character.id}"></input>
-                            <input type ="radio" class="rating__item" value="8" name="rating_${character.id}"></input>
-                            <input type ="radio" class="rating__item" value="9" name="rating_${character.id}"></input>
-                            <input type ="radio" class="rating__item" value="10" name="rating_${character.id}"></input>
+                            <input type ="radio" class="rating__item" value="1" name="rating_${character.id}" aria-label="star-rating: 1 star"></input>
+                            <input type ="radio" class="rating__item" value="2" name="rating_${character.id}" aria-label="star-rating: 2 stars"></input>
+                            <input type ="radio" class="rating__item" value="3" name="rating_${character.id}" aria-label="star-rating: 3 stars"></input>
+                            <input type ="radio" class="rating__item" value="4" name="rating_${character.id}" aria-label="star-rating: 4 stars"></input>
+                            <input type ="radio" class="rating__item" value="5" name="rating_${character.id}" aria-label="star-rating: 5 stars"></input>
+                            <input type ="radio" class="rating__item" value="6" name="rating_${character.id}" aria-label="star-rating: 6 stars"></input>
+                            <input type ="radio" class="rating__item" value="7" name="rating_${character.id}" aria-label="star-rating: 7 stars"></input>
+                            <input type ="radio" class="rating__item" value="8" name="rating_${character.id}" aria-label="star-rating: 8 stars"></input>
+                            <input type ="radio" class="rating__item" value="9" name="rating_${character.id}" aria-label="star-rating: 9 stars"></input>
+                            <input type ="radio" class="rating__item" value="10" name="rating_${character.id}" aria-label="star-rating: 10 stars"></input>
                         </div>
                     </div>
                     <div class="rating__value" id="value_${character.id}"></div>

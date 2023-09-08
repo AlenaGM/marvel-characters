@@ -109,7 +109,7 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 14px;
-  color: #f2264b;
+  color: #f34463;
 }
 
 .character__info div:not(:last-of-type) {
@@ -138,7 +138,8 @@ body {
 .rating__body::before {
   content: "★★★★★★★★★★";
   display: block;
-  font-size: 30px;
+  font-size: 32px;
+  letter-spacing: 3px;
 }
 
 .rating__active {
@@ -153,7 +154,8 @@ body {
 .rating__active::before {
   content: "★★★★★★★★★★";
   position: absolute;
-  font-size: 30px;
+  font-size: 32px;
+  letter-spacing: 3px;
   width: 100%;
   height: 100%;
   top: 0;
