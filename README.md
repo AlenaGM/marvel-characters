@@ -27,7 +27,9 @@ User can give a personal 1 to 10 ⭐- rating to any character (rating values are
 
 ## Updates
 
-worked a lot on accessibility and 
+A few months following the completion of the project, I invested time in refactoring the code to improve its clarity and cleanliness. Additionally, I dedicated significant effort to improving accessibility and performance. I am pleased with the outcome achieved:
+
+<img width="35%" alt="screen capture" src="../main/assets/img/pagespeed.png">
 
 <br><br> \* _Week 20 Training Project in [ITGirlSchool]_
 
