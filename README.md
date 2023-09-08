@@ -17,7 +17,7 @@ User can give a personal 1 to 10 ⭐ rating to any character (rating values are 
 
 ## Demo
 
-[Marvel-Characters]
+[Marvel Characters]
 
 ## Tech stack
 
@@ -28,5 +28,5 @@ User can give a personal 1 to 10 ⭐ rating to any character (rating values are 
 <br><br> \* _Week 20 Training Project in [ITGirlSchool]_
 
 [ITGirlSchool]: https://itgirlschool.com/en
-[Marvel-Characters]: https://alenagm.github.io/Marvel-Characters/
+[Marvel Characters]: https://alenagm.github.io/Marvel-Characters/
 [article]: https://www.ellegirl.ru/articles/vse-o-15-samyih-krutyih-supergeroyah/
