@@ -1,4 +1,4 @@
-/* Reset base styles  */
+/* ---- RESET BASE STYLES ---- */
 * {
   padding: 0px;
   margin: 0px;
@@ -28,8 +28,7 @@ img {
   height: auto;
 }
 
-/*Styles*/
-
+/* ---- STYLES ---- */
 html,
 body {
   height: 100%;
@@ -117,7 +116,7 @@ body {
   margin: 0px 0px 14px;
 }
 
-/*----RATING----*/
+/* ---- RATING ---- */
 .rating {
   display: flex;
   align-items: flex-end;
@@ -183,7 +182,7 @@ body {
   padding: 0px 0px 0px 10px;
 }
 
-/*----MEDIA QUERIES----*/
+/* ---- MEDIA QUERIES ---- */
 @media screen and (max-width: 767px) {
   .header {
     padding-top: 24px;

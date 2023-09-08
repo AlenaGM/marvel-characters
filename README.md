@@ -1,8 +1,8 @@
 # Marvel-Characters
 
-_Marvel Characters Cards_ <img width="20px" alt="screen capture" src="../main/assets/img/logo.png"> <img width="20px" alt="screen capture" src="../main/assets/img/logo.png">
+_Marvel Characters Cards_ <img width="20px" alt="screen capture" src="../main/assets/img/logo.png"> <img width="20px" alt="screen capture" src="../main/assets/icons/favicon-32x32.png">
 
-Project built while learning JSON-format. 
+Project built while learning JSON-format.
 
 The project includes:
 
