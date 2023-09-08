@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto+Condensed:wght@700&family=Roboto:wght@400;700&display=swap");
+
 /* ---- RESET BASE STYLES ---- */
 * {
   padding: 0px;
@@ -87,6 +89,8 @@ body {
 
 .character__image {
   width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
   box-shadow: 0 2px 4px #3131403b;
 }
 
