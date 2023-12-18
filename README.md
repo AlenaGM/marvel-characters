@@ -4,12 +4,12 @@ _Marvel Characters Cards_ <img width="20px" alt="screen capture" src="../main/as
 
 This project was created as a means of learning JSON-format.
 
-The project includes the following elements:
+The project consists of:
 
-1. JSON data containing information about Marvel characters;
-2. A gallery displaying pictures, main features, and detailed descriptions of 10 Marvel heros (content sourced from this [article]);
+1. JSON data that contains information about Marvel characters.
+2. A gallery that showcases pictures, main features, and detailed descriptions of 10 Marvel heroes (obtained from this [article]).
 
-Users have the ability to assign a personal rating of 1 to 10 ⭐️ to any character. These ratings are stored in Local Storage.
+Users can assign a personal rating of 1 to 10 ⭐️ to any character, and these ratings are stored in Local Storage.
 
 ## Result
 
@@ -27,12 +27,12 @@ Users have the ability to assign a personal rating of 1 to 10 ⭐️ to any char
 
 ## Updates
 
-A few months following the completion of the project, I invested time in refactoring the code to improve its clarity and cleanliness. Additionally, I dedicated significant effort to improving accessibility and performance. I am pleased with the outcome achieved:
+A few months after completing the project, I invested time in refactoring the code to enhance its clarity and cleanliness. Moreover, I dedicated significant effort to improving accessibility and performance. I am pleased with the outcome achieved:
 
 <img width="60%" alt="screen capture" src="../main/assets/img/pagespeed.png">
 
 <br><br><br> \* _Week 20 Training Project in [ITGirlSchool]_
 
 [ITGirlSchool]: https://itgirlschool.com/en
-[Marvel Characters]: https://alenagm.github.io/Marvel-Characters/
+[Marvel Characters]: https://alenagm.github.io/marvel-characters/
 [article]: https://www.ellegirl.ru/articles/vse-o-15-samyih-krutyih-supergeroyah/
